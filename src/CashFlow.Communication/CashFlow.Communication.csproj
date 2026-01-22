@@ -12,9 +12,11 @@
   <ItemGroup>
     <None Remove="Requests\" />
     <None Remove="Enums\" />
+    <None Remove="Responses\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Requests\" />
     <Folder Include="Enums\" />
+    <Folder Include="Responses\" />
   </ItemGroup>
 </Project>

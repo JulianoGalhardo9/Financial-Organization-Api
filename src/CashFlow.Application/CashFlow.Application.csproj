@@ -14,4 +14,14 @@
     <ProjectReference Include="..\CashFlow.Domain\CashFlow.Domain.csproj" />
     <ProjectReference Include="..\CashFlow.Exception\CashFlow.Exception.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="UseCases\" />
+    <None Remove="UseCases\Expenses\" />
+    <None Remove="UseCases\Expenses\Register\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UseCases\" />
+    <Folder Include="UseCases\Expenses\" />
+    <Folder Include="UseCases\Expenses\Register\" />
+  </ItemGroup>
 </Project>
