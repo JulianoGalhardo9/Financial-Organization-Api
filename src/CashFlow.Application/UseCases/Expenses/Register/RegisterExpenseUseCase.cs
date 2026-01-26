@@ -20,6 +20,8 @@ namespace CashFlow.Application.UseCases.Expenses.Register
 
 			var result = validator.Validate(request);
 
+			var errorMessages = result.Errors.Select(f => f.ErrorMessage).ToList();
+
         }
 	}
 }
