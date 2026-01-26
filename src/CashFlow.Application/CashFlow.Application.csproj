@@ -24,4 +24,7 @@
     <Folder Include="UseCases\Expenses\" />
     <Folder Include="UseCases\Expenses\Register\" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="7.0.0" />
+  </ItemGroup>
 </Project>
