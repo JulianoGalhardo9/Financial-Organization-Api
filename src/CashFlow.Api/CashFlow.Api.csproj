@@ -29,9 +29,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Controllers\" />
+    <None Remove="Filters\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
+    <Folder Include="Filters\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Controllers\WeatherForecastController.cs" />
