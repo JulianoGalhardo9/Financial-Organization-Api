@@ -9,4 +9,10 @@
   <ItemGroup>
     <Compile Remove="Class1.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="ExceptionsBase\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ExceptionsBase\" />
+  </ItemGroup>
 </Project>
