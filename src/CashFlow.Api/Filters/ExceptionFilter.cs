@@ -2,6 +2,8 @@
 using CashFlow.Exception.ExceptionsBase;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using CashFlow.Exception;
+
 
 namespace CashFlow.Api.Filters
 {
@@ -30,11 +32,18 @@ namespace CashFlow.Api.Filters
                 context.HttpContext.Response.StatusCode = StatusCodes.Status400BadRequest;
                 context.Result = new BadRequestObjectResult(errorResponse);
             }
+            else
+            {
+                var errorResponse = new ResponseErrorJson(context.Exception.Message);
+
+                context.HttpContext.Response.StatusCode = StatusCodes.Status400BadRequest;
+                context.Result = new BadRequestObjectResult(errorResponse);
+            }
         }
 
         private void ThrowUnknowError(ExceptionContext context)
         {
-            var errorResponse = new ResponseErrorJson("Unknown error");
+            var errorResponse = new ResponseErrorJson(ResourceErrorMessages.UNKNOWN_ERROR);
 
             context.HttpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
             context.Result = new ObjectResult(errorResponse);
