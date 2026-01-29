@@ -11,6 +11,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="ExceptionsBase\" />
+    <None Remove="ResourceErrorMessages.fr" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ExceptionsBase\" />
@@ -20,13 +21,24 @@
       <DependentUpon>ResourcesErrorMessages.resx</DependentUpon>
     </Compile>
     <Compile Update="ResourceErrorMessages.Designer.cs">
-      <DependentUpon>ResourceErrorMessages.resx</DependentUpon>
+      <DependentUpon>ResourceErrorMessages.fr</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ResourceErrorMessages.fr">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceErrorMessages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="ResourceErrorMessages.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceErrorMessages.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="ResourceErrorMessages.pt-BR">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>
