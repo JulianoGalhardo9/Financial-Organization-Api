@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -6,34 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="Class1.cs" />
-    <Compile Remove="ResourceErrorMessages.Designer.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove="ExceptionsBase\" />
-    <None Remove="ResourceErrorMessages.fr" />
-    <None Remove="ResourceErrorMessages.pt-BR" />
-    <None Remove="ResourceErrorMessages.pt-PT" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ExceptionsBase\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Update="ResourcesErrorMessages.Designer.cs">
-      <DependentUpon>ResourcesErrorMessages.resx</DependentUpon>
-    </Compile>
-    <Compile Update="ExceptionsBase\ResourceErrorMessages.Designer.cs">
-      <DependentUpon>ResourceErrorMessages.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Remove="ResourceErrorMessages.resx" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Update="ExceptionsBase\ResourceErrorMessages.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ResourceErrorMessages.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
 </Project>

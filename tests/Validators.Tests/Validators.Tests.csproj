@@ -25,4 +25,16 @@
   <ItemGroup>
     <Compile Remove="UnitTest1.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Expenses\" />
+    <None Remove="Expenses\Register\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Expenses\" />
+    <Folder Include="Expenses\Register\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\CashFlow.Application\CashFlow.Application.csproj" />
+    <ProjectReference Include="..\..\src\CashFlow.Communication\CashFlow.Communication.csproj" />
+  </ItemGroup>
 </Project>
