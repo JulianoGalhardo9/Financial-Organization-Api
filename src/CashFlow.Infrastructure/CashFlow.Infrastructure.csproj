@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Compile Remove="Class1.cs" />
+    <Compile Remove="DataAccess\DataBaseMigration.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CashFlow.Domain\CashFlow.Domain.csproj" />
