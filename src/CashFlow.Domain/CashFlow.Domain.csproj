@@ -12,9 +12,13 @@
   <ItemGroup>
     <None Remove="Entities\" />
     <None Remove="Enums\" />
+    <None Remove="Repositories\" />
+    <None Remove="Repositories\Expenses\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities\" />
     <Folder Include="Enums\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="Repositories\Expenses\" />
   </ItemGroup>
 </Project>

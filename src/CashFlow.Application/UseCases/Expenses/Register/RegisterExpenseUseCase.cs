@@ -2,7 +2,6 @@
 using CashFlow.Communication.Responses;
 using CashFlow.Domain.Entities;
 using CashFlow.Exception.ExceptionsBase;
-using CashFlow.Infrastructure.DataAcess;
 using CashFlow.Domain.Enums;
 
 namespace CashFlow.Application.UseCases.Expenses.Register
@@ -13,9 +12,6 @@ namespace CashFlow.Application.UseCases.Expenses.Register
 		{
             Validate(request);
 
-            var dbContext = new CashFlowDbContext();
-
-            dbContext.Database.EnsureCreated();
 
             var entity = new Expense
             {
@@ -25,9 +21,6 @@ namespace CashFlow.Application.UseCases.Expenses.Register
                 Title = request.Title,
                 PaymentType = (PaymentType)request.PaymentType,
             };
-
-            dbContext.Expenses.Add(entity);
-            dbContext.SaveChanges();
 
             return new ResponseRegisteredExpenseJson();
 
