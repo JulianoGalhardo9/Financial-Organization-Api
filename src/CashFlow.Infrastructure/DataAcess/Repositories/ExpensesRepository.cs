@@ -1,11 +1,18 @@
-﻿using System;
+﻿using CashFlow.Domain.Entities;
+using CashFlow.Domain.Repositories.Expenses;
+
 namespace CashFlow.Infrastructure.DataAcess.Repositories
 {
-	public class ExpensesRepository
-	{
-		public ExpensesRepository()
-		{
-		}
-	}
+    internal class ExpensesRepository : IExpensesRepositories
+    {
+        public void Add(Expense expense)
+        {
+            var dbContext = new CashFlowDbContext();
+
+            dbContext.Expenses.Add(expense);
+
+            dbContext.SaveChanges();
+        }
+    }
 }
 
