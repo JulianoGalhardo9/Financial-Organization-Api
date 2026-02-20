@@ -3,14 +3,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CashFlow.Infrastructure.DataAcess
 {
-    internal class CashFlowDbContext : DbContext
+    public class CashFlowDbContext : DbContext
     {
         public DbSet<Expense> Expenses { get; set; }
 
+        public CashFlowDbContext() { }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connectionString =
-                "Server=127.0.0.1;Database=CashFlowDB;User=root;Password=";
+            var connectionString = "Server=127.0.0.1;Database=CashFlowDB;User=root;Password=";
 
             var serverVersion = ServerVersion.AutoDetect(connectionString);
 
@@ -18,3 +19,4 @@ namespace CashFlow.Infrastructure.DataAcess
         }
     }
 }
+

@@ -1,4 +1,5 @@
 ﻿using CashFlow.Domain.Repositories.Expenses;
+using CashFlow.Infrastructure.DataAcess;
 using CashFlow.Infrastructure.DataAcess.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -8,8 +9,19 @@ namespace CashFlow.Infrastructure
 	{
 		public static void AddInfrastructure(this IServiceCollection services)
 		{
+            AddDbContext(services);
+            AddRepositories(services);
+        }
+
+		private static void AddRepositories(IServiceCollection services)
+		{
             services.AddScoped<IExpensesRepositories, ExpensesRepository>();
         }
-	}
+
+        public static void AddDbContext(IServiceCollection services)
+        {
+            services.AddDbContext<CashFlowDbContext>();
+        }
+    }
 }
 
