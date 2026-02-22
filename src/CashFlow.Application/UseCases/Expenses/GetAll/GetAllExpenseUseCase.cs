@@ -4,26 +4,25 @@ using CashFlow.Domain.Repositories.Expenses;
 
 namespace CashFlow.Application.UseCases.Expenses.GetAll
 {
-	public class GetAllExpenseUseCase : IGetAllExpenseUseCase
+    public class GetAllExpenseUseCase : IGetAllExpenseUseCase
     {
-		private readonly IExpensesRepositories _repository;
-		private readonly IMapper _mapper;
+        private readonly IExpensesRepositories _repository;
+        private readonly IMapper _mapper;
 
-		public GetAllExpenseUseCase(IExpensesRepositories repository, IMapper mapper)
-		{
-			_repository = repository;
-			_mapper = mapper;
-		}
+        public GetAllExpenseUseCase(IExpensesRepositories repository, IMapper mapper)
+        {
+            _repository = repository;
+            _mapper = mapper;
+        }
 
-        public async Task<ResponseExpenseJson> Execute()
-		{
-			var result = await _repository.GetAll();
+        public async Task<ResponseExpensesJson> Execute()
+        {
+            var result = await _repository.GetAll();
 
-			return new ResponseExpenseJson
-			{
-				Expenses = _mapper.Map<List<ResponseShortExpenseJson>>(result)
-			};
-		}
-	}
+            return new ResponseExpensesJson
+            {
+                Expenses = _mapper.Map<List<ResponseShortExpenseJson>>(result)
+            };
+        }
+    }
 }
-

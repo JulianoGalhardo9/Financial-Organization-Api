@@ -20,6 +20,7 @@
     <None Remove="UseCases\Expenses\Register\" />
     <None Remove="AutoMapper\" />
     <None Remove="UseCases\Expenses\GetAll\" />
+    <None Remove="UseCases\Expenses\GetById\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UseCases\" />
@@ -27,6 +28,7 @@
     <Folder Include="UseCases\Expenses\Register\" />
     <Folder Include="AutoMapper\" />
     <Folder Include="UseCases\Expenses\GetAll\" />
+    <Folder Include="UseCases\Expenses\GetById\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
