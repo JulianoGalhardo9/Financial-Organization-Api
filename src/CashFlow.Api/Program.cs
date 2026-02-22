@@ -1,4 +1,5 @@
 ﻿using CashFlow.Api.Filters;
+using CashFlow.Application;
 using CashFlow.Application.UseCases.Expenses.Register;
 using CashFlow.Infrastructure;
 
@@ -13,6 +14,8 @@ builder.Services.AddMvc(options => options.Filters.Add(typeof(ExceptionFilter)))
 builder.Services.AddInfrastructure(builder.Configuration);
 // !
 builder.Services.AddScoped<IRegisterExpenseUseCase, RegisterExpenseUseCase>();
+
+builder.Services.AddApplication();
 
 var app = builder.Build();
 

@@ -5,6 +5,7 @@ using CashFlow.Exception.ExceptionsBase;
 using CashFlow.Domain.Enums;
 using CashFlow.Domain.Repositories.Expenses;
 using CashFlow.Domain.Repositories;
+using AutoMapper;
 
 namespace CashFlow.Application.UseCases.Expenses.Register
 {
@@ -13,11 +14,16 @@ namespace CashFlow.Application.UseCases.Expenses.Register
 
         private readonly IExpensesRepositories _repository;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IMapper _mapper;
 
-        public RegisterExpenseUseCase(IExpensesRepositories repository, IUnitOfWork unitOfWork)
+        public RegisterExpenseUseCase(
+            IExpensesRepositories repository,
+            IUnitOfWork unitOfWork,
+            IMapper mapper)
         {
             _repository = repository;
             _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
 
 		public async Task<ResponseRegisteredExpenseJson> Execute(RequestRegisterExpenseJson request)
@@ -25,20 +31,13 @@ namespace CashFlow.Application.UseCases.Expenses.Register
             Validate(request);
 
 
-            var entity = new Expense
-            {
-                Amount = request.Amount,
-                Date = request.Date,
-                Description = request.Description,
-                Title = request.Title,
-                PaymentType = (PaymentType)request.PaymentType,
-            };
+            var entity = _mapper.Map<Expense>(request);
 
             await _repository.Add(entity);
 
             await _unitOfWork.Commit();
 
-            return new ResponseRegisteredExpenseJson();
+            return _mapper.Map<ResponseRegisteredExpenseJson>(entity);
 
         }
 
