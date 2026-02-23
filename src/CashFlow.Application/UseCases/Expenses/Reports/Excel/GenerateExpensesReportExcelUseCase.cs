@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CashFlow.Domain.Reports;
+using ClosedXML.Excel;
+
 namespace CashFlow.Application.UseCases.Expenses.Reports.Excel
 {
     public class GenerateExpensesReportExcelUseCase : IGenerateExpensesReportExcelUseCase
@@ -12,6 +14,13 @@ namespace CashFlow.Application.UseCases.Expenses.Reports.Excel
             workbook.Style.Font.FontName = "Times New Roman";
 
             var worksheet = workbook.Worksheets.Add(month.ToString("Y"));
+
+            InsertHeader(worksheet);
+        }
+
+        private void InsertHeader(IXLWorksheet worksheet)
+        {
+            worksheet.Cell("A1").Value = ResourceReportGenerationMessages.TITLE;
         }
     }
 }
