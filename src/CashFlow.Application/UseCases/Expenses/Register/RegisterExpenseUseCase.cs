@@ -2,10 +2,10 @@
 using CashFlow.Communication.Responses;
 using CashFlow.Domain.Entities;
 using CashFlow.Exception.ExceptionsBase;
-using CashFlow.Domain.Enums;
 using CashFlow.Domain.Repositories.Expenses;
 using CashFlow.Domain.Repositories;
 using AutoMapper;
+using FluentValidation;
 
 namespace CashFlow.Application.UseCases.Expenses.Register
 {
@@ -43,7 +43,7 @@ namespace CashFlow.Application.UseCases.Expenses.Register
 
 		private void Validate(RequestRegisterExpenseJson request)
 		{
-			var validator = new RegisterExpenseValidator();
+			var validator = new ExpenseValidator();
 
 			var result = validator.Validate(request);
 
