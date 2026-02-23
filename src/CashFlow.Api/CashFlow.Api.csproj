@@ -33,10 +33,12 @@
   <ItemGroup>
     <None Remove="Controllers\" />
     <None Remove="Filters\" />
+    <None Remove="Middleware\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Filters\" />
+    <Folder Include="Middleware\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Controllers\WeatherForecastController.cs" />

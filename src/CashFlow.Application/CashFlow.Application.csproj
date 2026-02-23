@@ -23,6 +23,8 @@
     <None Remove="UseCases\Expenses\GetById\" />
     <None Remove="UseCases\Expenses\Delete\" />
     <None Remove="UseCases\Expenses\Update\" />
+    <None Remove="UseCases\Expenses\Reports\" />
+    <None Remove="UseCases\Expenses\Reports\Excel\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UseCases\" />
@@ -33,11 +35,14 @@
     <Folder Include="UseCases\Expenses\GetById\" />
     <Folder Include="UseCases\Expenses\Delete\" />
     <Folder Include="UseCases\Expenses\Update\" />
+    <Folder Include="UseCases\Expenses\Reports\" />
+    <Folder Include="UseCases\Expenses\Reports\Excel\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="FluentValidation" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="ClosedXML" Version="0.102.3" />
   </ItemGroup>
 </Project>
