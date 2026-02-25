@@ -25,7 +25,7 @@ namespace CashFlow.Application.UseCases.Expenses.Reports.Excel
 
             using var workbook = new XLWorkbook();
 
-            workbook.Author = "Welisson Arley";
+            workbook.Author = "Juliano Galhardo";
             workbook.Style.Font.FontSize = 12;
             workbook.Style.Font.FontName = "Times New Roman";
 
