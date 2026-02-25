@@ -1,4 +1,5 @@
-﻿using CashFlow.Domain.Reports;
+﻿using CashFlow.Domain.Enums;
+using CashFlow.Domain.Reports;
 using CashFlow.Domain.Repositories.Expenses;
 using ClosedXML.Excel;
 
@@ -31,10 +32,35 @@ namespace CashFlow.Application.UseCases.Expenses.Reports.Excel
 
             InsertHeader(worksheet);
 
-            using var file = new MemoryStream();
+            int row = 2;
+            foreach (var expense in expenses)
+            {
+                worksheet.Cell($"A{row}").Value = expense.Title;
+                worksheet.Cell($"B{row}").Value = expense.Date;
+                worksheet.Cell($"C{row}").Value = ConvertPaymentType(expense.PaymentType);
+                worksheet.Cell($"D{row}").Value = expense.Amount;
+                worksheet.Cell($"D{row}").Style.NumberFormat.Format = "R$ #,##0.00";
+
+                worksheet.Cell($"E{row}").Value = expense.Description;
+
+                row++;
+            }
+
+            var file = new MemoryStream();
             workbook.SaveAs(file);
 
             return file.ToArray();
+        }
+
+        private string ConvertPaymentType(PaymentType payment)
+        {
+            return payment switch
+            {
+                PaymentType.Cash => "Dinheiro",
+                PaymentType.CreditCard => "Cartão de Débito",
+                PaymentType.DebitCard => "Cartão de Crédito",
+                PaymentType.EletronicTransfer => throw new NotImplementedException()
+            };
         }
 
         private void InsertHeader(IXLWorksheet worksheet)
