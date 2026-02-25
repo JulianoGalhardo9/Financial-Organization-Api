@@ -1,5 +1,4 @@
-﻿using System;
-using CashFlow.Domain.Entities;
+﻿using CashFlow.Domain.Entities;
 
 namespace CashFlow.Domain.Repositories.Expenses
 {
@@ -8,6 +7,8 @@ namespace CashFlow.Domain.Repositories.Expenses
         Task<List<Expense>> GetAll();
 
         Task<Expense?> GetById(long id);
+
+        Task<List<Expense>> FilterByMonth(DateOnly date);
     }
 }
 
