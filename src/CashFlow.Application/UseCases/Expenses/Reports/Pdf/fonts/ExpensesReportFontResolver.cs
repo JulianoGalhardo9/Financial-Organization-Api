@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using MigraDoc.DocumentObjectModel;
 using PdfSharp.Fonts;
 
 namespace CashFlow.Application.UseCases.Expenses.Reports.Pdf.fonts
@@ -30,7 +29,7 @@ namespace CashFlow.Application.UseCases.Expenses.Reports.Pdf.fonts
         {
             var assembly = Assembly.GetExecutingAssembly();
 
-            return assembly.GetManifestResourceStream($"CashFlow.Application.UseCases.Expenses.Reports.Pdf.Fonts.{faceName}.ttf");
+            return assembly.GetManifestResourceStream($"CashFlow.Application.UseCases.Expenses.Reports.Pdf.fonts.{faceName}.ttf");
         }
     }
 }

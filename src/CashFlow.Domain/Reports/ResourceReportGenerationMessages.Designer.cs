@@ -19,7 +19,7 @@ namespace CashFlow.Domain.Reports {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Build.Tasks.StronglyTypedResourceBuilder", "15.1.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class ResourceReportGenerationMessages {
+     public class ResourceReportGenerationMessages {
 
         public static global::System.Resources.ResourceManager resourceMan;
 
@@ -112,7 +112,7 @@ namespace CashFlow.Domain.Reports {
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to Total spent in {0}.
+        ///   Looks up a localized string similar to Total das despesas em {0}.
         /// </summary>
         public static string TOTAL_SPENT_IN {
             get {
