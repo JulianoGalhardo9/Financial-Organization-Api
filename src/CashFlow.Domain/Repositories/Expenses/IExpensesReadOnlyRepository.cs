@@ -11,4 +11,3 @@ namespace CashFlow.Domain.Repositories.Expenses
         Task<List<Expense>> FilterByMonth(DateOnly date);
     }
 }
-

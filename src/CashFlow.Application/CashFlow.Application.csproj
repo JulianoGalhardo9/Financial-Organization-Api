@@ -25,6 +25,7 @@
     <None Remove="UseCases\Expenses\Update\" />
     <None Remove="UseCases\Expenses\Reports\" />
     <None Remove="UseCases\Expenses\Reports\Excel\" />
+    <None Remove="UseCases\Expenses\Reports\Pdf\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UseCases\" />
@@ -37,6 +38,7 @@
     <Folder Include="UseCases\Expenses\Update\" />
     <Folder Include="UseCases\Expenses\Reports\" />
     <Folder Include="UseCases\Expenses\Reports\Excel\" />
+    <Folder Include="UseCases\Expenses\Reports\Pdf\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />

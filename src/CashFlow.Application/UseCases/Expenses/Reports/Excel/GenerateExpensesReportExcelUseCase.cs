@@ -7,6 +7,7 @@ namespace CashFlow.Application.UseCases.Expenses.Reports.Excel
 {
     public class GenerateExpensesReportExcelUseCase : IGenerateExpensesReportExcelUseCase
     {
+        private const string CURRENCY_SYMBOL = "€";
         private readonly IExpensesReadOnlyRepository _repository;
 
         public GenerateExpensesReportExcelUseCase(IExpensesReadOnlyRepository repository)
@@ -22,7 +23,7 @@ namespace CashFlow.Application.UseCases.Expenses.Reports.Excel
                 return Array.Empty<byte>();
             }
 
-            var workbook = new XLWorkbook();
+            using var workbook = new XLWorkbook();
 
             workbook.Author = "Welisson Arley";
             workbook.Style.Font.FontSize = 12;
@@ -38,13 +39,17 @@ namespace CashFlow.Application.UseCases.Expenses.Reports.Excel
                 worksheet.Cell($"A{row}").Value = expense.Title;
                 worksheet.Cell($"B{row}").Value = expense.Date;
                 worksheet.Cell($"C{row}").Value = ConvertPaymentType(expense.PaymentType);
+
                 worksheet.Cell($"D{row}").Value = expense.Amount;
-                worksheet.Cell($"D{row}").Style.NumberFormat.Format = "R$ #,##0.00";
+
+                worksheet.Cell($"D{row}").Style.NumberFormat.Format = $"-{CURRENCY_SYMBOL} #,##0.0";
 
                 worksheet.Cell($"E{row}").Value = expense.Description;
 
                 row++;
             }
+
+            worksheet.Columns().AdjustToContents();
 
             var file = new MemoryStream();
             workbook.SaveAs(file);
