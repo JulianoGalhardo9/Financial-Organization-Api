@@ -1,5 +1,7 @@
 ﻿using CashFlow.Application.UseCases.Expenses.Reports.Pdf.fonts;
 using CashFlow.Domain.Repositories.Expenses;
+using CashFlow.Domain.Reports;
+using MigraDoc.DocumentObjectModel;
 using PdfSharp.Fonts;
 
 namespace CashFlow.Application.UseCases.Expenses.Reports.Pdf
@@ -27,6 +29,13 @@ namespace CashFlow.Application.UseCases.Expenses.Reports.Pdf
 
 
             return Array.Empty<byte>(); ;
+        }
+
+        private Document CreateDocument(DateOnly month)
+        {
+            var document = new Document();
+            document.Info.Title = $"{ResourceReportGenerationMessages.EXPENSES_FOR}";
+            return document;
         }
     }
 }

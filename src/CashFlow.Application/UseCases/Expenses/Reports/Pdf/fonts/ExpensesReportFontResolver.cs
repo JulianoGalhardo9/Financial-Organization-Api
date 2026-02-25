@@ -10,10 +10,7 @@ namespace CashFlow.Application.UseCases.Expenses.Reports.Pdf.fonts
         {
             var stream = ReadFontFile(faceName);
 
-            if(stream is null)
-            {
-                stream = ReadFontFile(FontHelper.DEFAULT_FONT);
-            }
+            stream ??= ReadFontFile(FontHelper.DEFAULT_FONT);
 
             var length = (int)stream!.Length;
 
