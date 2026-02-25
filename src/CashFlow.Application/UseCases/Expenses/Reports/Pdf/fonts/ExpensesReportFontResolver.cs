@@ -1,23 +1,39 @@
-﻿using MigraDoc.DocumentObjectModel;
+﻿using System.Reflection;
+using MigraDoc.DocumentObjectModel;
 using PdfSharp.Fonts;
 
 namespace CashFlow.Application.UseCases.Expenses.Reports.Pdf.fonts
 {
     public class ExpensesReportFontResolver : IFontResolver
     {
-        public byte[]? IFontResolver.GetFont(string faceName)
+        byte[]? IFontResolver.GetFont(string faceName)
         {
-            throw new NotImplementedException();
+            var stream = ReadFontFile(faceName);
+
+            if(stream is null)
+            {
+                stream = ReadFontFile(FontHelper.DEFAULT_FONT);
+            }
+
+            var length = (int)stream!.Length;
+
+            var data = new byte[length];
+
+            stream.Read(buffer: data, offset: 0, count: length);
+
+            return data;
         }
 
-        public FontResolverInfo? IFontResolver.ResolveTypeface(string familyName, bool bold, bool italic)
+        FontResolverInfo? IFontResolver.ResolveTypeface(string familyName, bool bold, bool italic)
         {
-            new Font
-            {
-                Name = FontHelper.RALEWAY_REGULAR;
-            };
-
             return new FontResolverInfo(familyName);
+        }
+
+        private Stream? ReadFontFile(string faceName)
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+
+            return assembly.GetManifestResourceStream($"CashFlow.Application.UseCases.Expenses.Reports.Pdf.Fonts.{faceName}.ttf");
         }
     }
 }
