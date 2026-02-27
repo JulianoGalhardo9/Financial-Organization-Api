@@ -4,8 +4,7 @@ using CashFlow.Domain.Reports;
 using MigraDoc.DocumentObjectModel;
 using PdfSharp.Fonts;
 using MigraDoc.Rendering;
-using CashFlow.Domain.Entities;
-using DocumentFormat.OpenXml.Bibliography;
+using MigraDoc.DocumentObjectModel.Tables;
 
 namespace CashFlow.Application.UseCases.Expenses.Reports.Pdf
 {
@@ -36,6 +35,13 @@ namespace CashFlow.Application.UseCases.Expenses.Reports.Pdf
 
             var totalExpenses = expenses.Sum(expense => expense.Amount);
             CreateTotalSpentSection(page, month, totalExpenses);
+
+            foreach (var expense in expenses)
+            {
+                var table = CreateExpenseTable(page);
+
+
+            }
 
 
             return RenderDocument(document);
@@ -95,6 +101,18 @@ namespace CashFlow.Application.UseCases.Expenses.Reports.Pdf
             paragraph.AddLineBreak();
 
             paragraph.AddFormattedText($"{totalExpenses:N2} {CURRENCY_SYMBOL}", new Font { Name = FontHelper.WORKSANS_BLACK, Size = 50 });
+        }
+
+        private Table CreateExpenseTable(Section page)
+        {
+            var table = page.AddTable();
+
+            table.AddColumn("195").Format.Alignment = ParagraphAlignment.Left;
+            table.AddColumn("80").Format.Alignment = ParagraphAlignment.Center;
+            table.AddColumn("120").Format.Alignment = ParagraphAlignment.Center;
+            table.AddColumn("120").Format.Alignment = ParagraphAlignment.Right;
+
+            return table;
         }
 
         private byte[] RenderDocument(Document document)
