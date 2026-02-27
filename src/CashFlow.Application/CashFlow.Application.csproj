@@ -31,6 +31,7 @@
     <None Remove="UseCases\Expenses\Reports\Pdf\fonts\Raleway-Regular.ttf" />
     <None Remove="UseCases\Expenses\Reports\Pdf\fonts\WorkSans-Black.ttf" />
     <None Remove="UseCases\Expenses\Reports\Pdf\fonts\WorkSans-Regular.ttf" />
+    <None Remove="Logo\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UseCases\" />
@@ -45,6 +46,7 @@
     <Folder Include="UseCases\Expenses\Reports\Excel\" />
     <Folder Include="UseCases\Expenses\Reports\Pdf\" />
     <Folder Include="UseCases\Expenses\Reports\Pdf\fonts\" />
+    <Folder Include="Logo\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
