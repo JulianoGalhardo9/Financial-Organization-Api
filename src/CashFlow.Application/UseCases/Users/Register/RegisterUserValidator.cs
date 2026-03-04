@@ -15,7 +15,7 @@ namespace CashFlow.Application.UseCases.Users.Register
                 .EmailAddress()
                 .WithMessage(ResourceErrorMessages.EMAIL_INVALID);
 
-            RuleFor(user => user.Password).SetValidator(new PasswordValidator<RequestRegisterUserJson>());
+            RuleFor(user => user.Password).SetValidator(new PasswordValidator());
         }
     }
 }

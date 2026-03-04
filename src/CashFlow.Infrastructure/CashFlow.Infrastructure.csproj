@@ -16,13 +16,16 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.3" />
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="DataAcess\" />
     <None Remove="DataAcess\Repositories\" />
+    <None Remove="Security\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataAcess\" />
     <Folder Include="DataAcess\Repositories\" />
+    <Folder Include="Security\" />
   </ItemGroup>
 </Project>
