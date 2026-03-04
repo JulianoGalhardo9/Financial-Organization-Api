@@ -116,6 +116,38 @@ namespace CashFlow.Exception
                 return ResourceManager.GetString("EXPENSE_NOT_FOUND", resourceCulture);
             }
         }
+
+        public static string EMAIL_EMPTY
+        {
+            get
+            {
+                return ResourceManager.GetString("EMAIL_EMPTY", resourceCulture);
+            }
+        }
+
+        public static string EMAIL_INVALID
+        {
+            get
+            {
+                return ResourceManager.GetString("EMAIL_INVALID", resourceCulture);
+            }
+        }
+
+        public static string INVALID_PASSWORD
+        {
+            get
+            {
+                return ResourceManager.GetString("INVALID_PASSWORD", resourceCulture);
+            }
+        }
+
+        public static string NAME_EMPTY
+        {
+            get
+            {
+                return ResourceManager.GetString("NAME_EMPTY", resourceCulture);
+            }
+        }
     }
 }
 
