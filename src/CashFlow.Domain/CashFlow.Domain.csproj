@@ -18,6 +18,7 @@
     <None Remove="Extentions\" />
     <None Remove="Security\" />
     <None Remove="Repositories\User\" />
+    <None Remove="Security\Tokens\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities\" />
@@ -28,6 +29,7 @@
     <Folder Include="Extentions\" />
     <Folder Include="Security\" />
     <Folder Include="Repositories\User\" />
+    <Folder Include="Security\Tokens\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Reports\ResourceReportGenerationMessages.resx">

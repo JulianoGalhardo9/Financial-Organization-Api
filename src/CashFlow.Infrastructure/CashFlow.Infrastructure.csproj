@@ -17,15 +17,20 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.3" />
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.0.3" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="DataAcess\" />
     <None Remove="DataAcess\Repositories\" />
     <None Remove="Security\" />
+    <None Remove="Security\Cryptography\" />
+    <None Remove="Security\Tokens\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataAcess\" />
     <Folder Include="DataAcess\Repositories\" />
     <Folder Include="Security\" />
+    <Folder Include="Security\Cryptography\" />
+    <Folder Include="Security\Tokens\" />
   </ItemGroup>
 </Project>
