@@ -17,7 +17,7 @@
     <None Remove="Reports\" />
     <None Remove="Extentions\" />
     <None Remove="Security\" />
-    <None Remove="Security\Cryptographyc\" />
+    <None Remove="Repositories\User\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities\" />
@@ -27,7 +27,7 @@
     <Folder Include="Reports\" />
     <Folder Include="Extentions\" />
     <Folder Include="Security\" />
-    <Folder Include="Security\Cryptographyc\" />
+    <Folder Include="Repositories\User\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Reports\ResourceReportGenerationMessages.resx">

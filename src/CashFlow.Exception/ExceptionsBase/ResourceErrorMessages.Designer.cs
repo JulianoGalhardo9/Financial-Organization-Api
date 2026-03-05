@@ -23,9 +23,9 @@ namespace CashFlow.Exception
     public class ResourceErrorMessages
     {
 
-        private static global::System.Resources.ResourceManager resourceMan;
+        public static global::System.Resources.ResourceManager resourceMan;
 
-        private static global::System.Globalization.CultureInfo resourceCulture;
+        public static global::System.Globalization.CultureInfo resourceCulture;
 
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal ResourceErrorMessages()
@@ -146,6 +146,14 @@ namespace CashFlow.Exception
             get
             {
                 return ResourceManager.GetString("NAME_EMPTY", resourceCulture);
+            }
+        }
+
+        public static string EMAIL_ALREADY_REGISTERED
+        {
+            get
+            {
+                return ResourceManager.GetString("EMAIL_ALREADY_REGISTERED", resourceCulture);
             }
         }
     }
