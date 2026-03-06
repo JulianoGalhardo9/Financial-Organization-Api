@@ -1,16 +1,15 @@
 ﻿using CashFlow.Domain.Security.Cryptographyc;
 using BC = BCrypt.Net.BCrypt;
 
-namespace CashFlow.Infrastructure.Security
-{
-    internal class BCrypt : IPasswordEncripter
-    {
-        public string Encrypt(string password)
-        {
-            string passwordHash = BC.HashPassword(password);
+namespace CashFlow.Infrastructure.Security.Cryptography;
 
-            return passwordHash;
-        }
+internal class BCrypt : IPasswordEncripter
+{
+    public string Encrypt(string password)
+    {
+        string passwordHash = BC.HashPassword(password);
+
+        return passwordHash;
     }
 }
 
