@@ -34,6 +34,8 @@
     <None Remove="UseCases\Expenses\Reports\Pdf\Colors\" />
     <None Remove="UseCases\Users\" />
     <None Remove="UseCases\Users\Register\" />
+    <None Remove="UseCases\Login\" />
+    <None Remove="UseCases\Login\DoLogin\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UseCases\" />
@@ -51,6 +53,8 @@
     <Folder Include="UseCases\Expenses\Reports\Pdf\Colors\" />
     <Folder Include="UseCases\Users\" />
     <Folder Include="UseCases\Users\Register\" />
+    <Folder Include="UseCases\Login\" />
+    <Folder Include="UseCases\Login\DoLogin\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
