@@ -12,7 +12,7 @@ namespace CashFlow.Exception.ExceptionsBase
 
         public override List<string> GetErrors()
         {
-            return [Message];
+            return new List<string> { Message };
         }
     }
 }
